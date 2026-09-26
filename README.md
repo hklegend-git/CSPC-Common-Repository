@@ -3,46 +3,34 @@
 My coursework repository for the course.
 Each practical lives under `PW<n>/Lab <X>/`.
 
-## Setup
-
-Create and activate the environment for a given lab:
-
-```bash
-conda env create -f "PW<n>/Lab <X>/environment.yml"
-conda activate cspc
-```
-
-Run the tests for a lab from inside its folder:
-
-```bash
-cd "PW<n>/Lab <X>"
-pytest -v
-```
-
----
-
 ## PW1 — Lab A: Reproducible Foundations
 
-**What I built:**
-- <one or two lines: the CSPC repo, the environment, the decay simulation, the tests>
+### What I Did
 
-**Speed comparison (loop vs NumPy):**
+1. Implemented and tested a stochastic radioactive decay simulation.
+2. Added a test to check that negative decay rates raise a `ValueError`.
+3. Added a test comparing the average simulation result with the analytical decay law.
+4. Compared the performance of the loop-based implementation with the NumPy implementation.
+5. Used `pytest` to verify that the implementation works correctly.
 
-| version | time (s) |
-|---------|----------|
-| pure-Python loop | ... |
-| NumPy (vectorised) | ... |
+### What the Data Showed
 
-- Speed-up: **... × faster**
+The simulations show the expected decrease in the number of atoms over time.
 
-**Tests:** all passing? (yes / no)
+### Comparison with the Analytical Law
 
-**Conclusion:**
-- <2–3 sentences: what worked, what you learned, any problems you hit and how you solved them>
+The average of many stochastic simulations is close to the analytical decay law:
 
----
+`N(t) = N0 * exp(-lambda * t)`
 
-<!-- Future sessions: add a new "## PW<n> — Lab <X>" section below. -->
+### Performance
+
+The NumPy implementation is significantly faster than the Python loop implementation for the tested simulation.
+
+### Conclusion
+
+During this laboratory work, I learned how to test Python code with `pytest`, compare a stochastic simulation with an analytical model, and measure the performance of different implementations.
+
 ## PW1 — Lab B
 
 ### What I Did
